@@ -3,21 +3,38 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
- 
+    transition: 0.5s;
 }
 
 body{
     background-color: #000;
 }
 
+:root{
+    --breath: 100px
+}
+
+h1{
+    font-size: 16px;
+}
+
+h2{
+    font-size: 12px;
+}
+
+h3{
+    font-size: 12px;
+}
+
 /* ------------------------------------------------- */
 
 .nav-bar{
     position: fixed;
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: var(--breath);
+    padding-right: var(--breath);
     padding-top: 0px;
     width: 100%;
+    height: 60px;
     z-index: 10;
 
     background-color: #000;
@@ -26,55 +43,49 @@ body{
 
 .nav-bar img{
     float: left;
-    width: 250px;
-    padding: 25px 0 25px 0;
-    
+    height: 100%;
+    padding: 15px 0;
 }
 
 .nav-bar ul{
     float: right;
+    height: 100%;
 }
 
 .nav-bar li{
     float: left;
-    padding: 0 60px 0 60px;
+    padding: 0 20px;
+    height: 100%;
 }
 
 .nav-bar li a{
+    text-align: center;
     display: block;
     color: #fff;
     text-decoration: none;
-    font-size: 1.75em;
-    margin: 1.2em 0 1.2em 0;
+    font-size: 16px;
+    line-height: 60px;
 }
 
 .nav-bar li:hover{
-    text: #000;
     background-color: #fff;
-    transition: 0.5s;
 }
 
 .nav-bar li:hover a{
     color: #000;
-    transition: 0.5s;
 }
 
 /* ------------------------------------------------- */
 
 .home-page{
-    /* background-color: #000; */
-    padding-top: 58px;
-    padding: 207px 0px 100px 0px;
+    padding-top: 60px;
 }
 
-.home-page video{
-    width: 100%;
+.home-page .video-container video{
+    width: 100vw;
     position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
+    /* top: 10px; */
     z-index: -1;
-    /* box-shadow: inset 10px 10px 100px; */
 }
 
 .home-page .video-container{
@@ -82,12 +93,14 @@ body{
 }
 
 .home-page .logo-container{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0  auto;
+    --fixed : 33vw;
+    width: calc(var(--fixed));
+    height: calc(var(--fixed));
     background-color: #fff;
+    border-radius: 50%;
+
+    overflow: hidden;
+    margin: calc(100vw / 16)  auto;
 }
 
 .home-page img{
@@ -99,24 +112,21 @@ body{
 
 .portfolio{
     background-color: #fff;
+    width: 100vw;
 }
 
 .portfolio img{
-    width: 400px;
+    width: 20vw;
 }
 
 .works{
-    padding: 140px;
-    column-gap: 70px;
-    width: 100%;
-
+    padding: var(--breath);
+    column-gap: calc(var(--breath) / 2);
+    
     width: 100%;
     vertical-align: top;
     display: inline-flex;
     overflow: auto;
-    /* white-space: nowrap; */
-
-    box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
 }
 
 .list-item{
@@ -128,7 +138,7 @@ body{
     scroll-snap-align: start;
 
     box-shadow: 0px 0px 20px rgb(0 0 0 / 15%);
-    transition: all .3s cubic-bezier(0,0,.5,1);
+    transition: all.3s cubic-bezier(0,0,.5,1);
 }
 
 .list-item:hover{
@@ -139,19 +149,18 @@ body{
     padding-bottom: 15px;
 }
 
-.portfolio li h1{
-    padding-bottom: 15px;
+.portfolio h1{
+    padding-bottom: 10px;
 }
 
 .portfolio h3{
     color: #808080;
     font-weight: 300;
-    font-size: 1.5em;
     font-style: italic;
 }
 
 .portfolio h2{
-    font-size: 1.5em;
+ 
 }
 
 /* ------------------------------------------------- */
@@ -161,94 +170,81 @@ body{
     color: #fff;
     position: relative;
     overflow: hidden;
+    padding: 50px 0 50px var(--breath);
 }
 
 .service ul{
-    padding-left: 140px;
+    padding-bottom: 50px;
 }
 
 .service li{
     float: left;
-    font-size: 2em;
-    padding: 70px 30px 0 0;
+    font-size: 16px;
+    padding: 0 30px 0 0;
 }
 
-.service p{
+.service .description{
     text-align: justify;
     display: block;
 
-    font-size: 2em;
-    padding-left: 140px;
-    /* padding-left: calc(100%-140px); */
-    padding-top: 200px;
-    width: 60%;
-    padding-bottom: 200px;
+    font-size: 16px;
+    width: 50%;
 }
 
 .service .illust{
     /* background-image: url("img/z6-front-xl.png"); */
-    width: 800px;
+    width: 40vw;
     position: absolute;
-    right: -130px;
-    bottom:-150px;
+    right: -50px;
+    bottom:-50px;
 }
 
 /* ------------------------------------------------- */
 
 .member{
     background-color: #fff;
-    padding: 140px;
+    padding: 50px var(--breath);
 }
 
 .name-card-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-between;
-}
-
-.member img{
-    width: 300px;
-    border-radius: 50%;
+    justify-content:space-around;
 }
 
 .name-card{
-    border-radius: 40px;
-    padding: 50px;
+    border-radius: 20px;
+    padding: 20px;
     box-shadow: 0px 0px 20px rgb(0 0 0 / 8%);
+}
+
+.member img{
+    width: 150px;
+    border-radius: 50%;
 }
 
 .name-card-txt{
     text-align: center;
     line-height: 1.6;
     padding-top: 20px;
-    /* border: 5px solid rgb(0, 255, 234); */
-    /* float: right; */
-}
-
-/* ------------------------------------------------- */
-
-.about{
-    background-color: #000;
 }
 
 .about p{
-    color: #fff;
-    font-size: 2em;
-    padding: 140px;
+    font-size: 16px;
+    padding-top: 40px;
     text-align: justify;
 }
 
 /* ------------------------------------------------- */
 
 .footer{
-    background-color: #fff;
-    /* width: 100%; */
+    width: 100vw;
 }
 
 .footer .chiobu{
     display: block;
-    width: 250px;
+    width: 10vw;
     margin: 0 auto;
     padding-top: 10px;
 }
@@ -258,24 +254,27 @@ body{
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
-    width: 400px;
-    padding-bottom: 50px;
+    width: 30vw;
+    padding-bottom: 10px;
 
 }
 
 .footer .social-media-link img{
-    width: 50px;
+    width: 25px;
+    color: #fff;
 }
 
 .footer span{
     margin: 0  auto;
     display: block;
-    background-color: #000;
+    background-color: #fff;
     height: 1px;
-    width: 700px
+    width: 50vw
 }
 
 .footer p{
     text-align: center;
-    padding: 50px;
+    padding: 10px;
+    font-size: 8px;
+    color: #fff;
 }
