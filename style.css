@@ -113,6 +113,7 @@ h3{
 .portfolio{
     background-color: #fff;
     width: 100vw;
+    overflow: hidden;
 }
 
 .portfolio img{
@@ -126,7 +127,7 @@ h3{
     width: 100%;
     vertical-align: top;
     display: inline-flex;
-    overflow: auto;
+    overflow-x: scroll;
 }
 
 .list-item{
