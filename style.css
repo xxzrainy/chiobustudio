@@ -45,6 +45,7 @@ h3{
     float: left;
     height: 100%;
     padding: 15px 0;
+    cursor: pointer;
 }
 
 .nav-bar ul{
@@ -56,9 +57,7 @@ h3{
     float: left;
     padding: 0 20px;
     height: 100%;
-}
 
-.nav-bar li a{
     text-align: center;
     display: block;
     color: #fff;
@@ -69,10 +68,8 @@ h3{
 
 .nav-bar li:hover{
     background-color: #fff;
-}
-
-.nav-bar li:hover a{
     color: #000;
+    cursor: pointer;
 }
 
 /* ------------------------------------------------- */
@@ -114,6 +111,8 @@ h3{
     background-color: #fff;
     width: 100vw;
     overflow: hidden;
+
+    position: relative;
 }
 
 .portfolio img{
@@ -172,6 +171,8 @@ h3{
     position: relative;
     overflow: hidden;
     padding: 50px 0 50px var(--breath);
+
+    position: relative;
 }
 
 .service ul{
@@ -182,6 +183,11 @@ h3{
     float: left;
     font-size: 16px;
     padding: 0 30px 0 0;
+}
+
+.service li:hover{
+    scale: 1.1;
+    cursor: pointer;
 }
 
 .service .description{
@@ -205,6 +211,8 @@ h3{
 .member{
     background-color: #fff;
     padding: 50px var(--breath);
+
+    position: relative;
 }
 
 .name-card-container{
